@@ -1,3 +1,8 @@
+<picture>
+    <source srcset="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_pref_dark_RGB.svg" media="(prefers-color-scheme: dark)">
+    <img src="https://raw.githubusercontent.com/leptos-rs/leptos/main/docs/logos/Leptos_logo_RGB.svg" alt="Leptos Logo">
+</picture>
+
 # Leptos SPA Template
 
 A modern, production-ready Single Page Application (SPA) template built with [Leptos](https://leptos.dev/), Rust, and WebAssembly.
