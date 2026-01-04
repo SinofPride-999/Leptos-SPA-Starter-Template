@@ -5,20 +5,15 @@ pub fn Button() -> impl IntoView {
     let (count, set_count) = signal(0);
 
     view! {
-        <div>
+        <div class="flex flex-col items-center gap-4">
             <button
+                class="btn-primary"
                 on:click=move |_| {
-                    set_count.update(|v| *v += 1);
+                    set_count.update(|n| *n += 1);
                 }
             >
-                "Click me: "
-                {count}
+                "Click me: " {count}
             </button>
-
-            <p>
-                "Double count: "
-                {move || count.get() * 2}
-            </p>
         </div>
     }
 }

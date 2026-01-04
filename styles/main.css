@@ -1,0 +1,319 @@
+/* Reset + base styles */
+:root {
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  --indigo-500: #6366f1;
+  --indigo-600: #4f46e5;
+  --cyan-400: #22d3ee;
+  --cyan-500: #06b6d4;
+  --emerald-400: #34d399;
+  --emerald-500: #10b981;
+
+  --gradient-primary: linear-gradient(135deg, var(--indigo-500), var(--cyan-500));
+  --gradient-secondary: linear-gradient(135deg, var(--slate-700), var(--slate-800));
+
+  --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.4);
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 30px rgba(99, 102, 241, 0.15);
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+               'Segoe UI', Roboto, 'Segoe UI Emoji', sans-serif;
+  background: var(--slate-900);
+  color: var(--slate-200);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Glass morphism effect */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    var(--shadow-lg),
+    var(--shadow-glow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+/* Home page container */
+.home-container {
+  max-width: 560px;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  text-align: left;
+  margin-left: 3rem;
+  margin-top: 2rem;
+}
+
+/* Typography */
+.home-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--slate-100), var(--cyan-400));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  text-align: left;
+}
+
+.home-subtitle {
+  font-size: 1.125rem;
+  color: var(--slate-400);
+  margin-bottom: 2.5rem;
+  max-width: 100%;
+  text-align: left;
+}
+
+/* Feature highlights */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.feature-item {
+  background: var(--gradient-secondary);
+  padding: 1.5rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-base);
+  text-align: left;
+}
+
+.feature-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
+  text-align: left;
+}
+
+.feature-text {
+  font-size: 0.875rem;
+  color: var(--slate-300);
+  text-align: left;
+}
+
+/* Button improvements */
+.btn-container {
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.btn-container > p {
+  text-align: left;
+  margin-bottom: 1rem;
+  color: var(--slate-400);
+}
+
+.btn-container > div {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Navigation */
+nav {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+}
+
+nav a {
+  color: var(--cyan-400);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-base);
+}
+
+nav a:hover {
+  color: var(--cyan-300);
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  #app {
+    padding-top: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-container {
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-title {
+    text-align: center;
+  }
+
+  .home-subtitle {
+    text-align: center;
+  }
+
+  .btn-container {
+    text-align: center;
+  }
+
+  .btn-container > div {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .home-container {
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(99, 102, 241, 0.15);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 45px rgba(99, 102, 241, 0.25);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.btn-primary {
+  appearance: none;
+  border: none;
+  background: var(--gradient-primary);
+  color: var(--slate-50);
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    var(--shadow-md),
+    0 0 40px rgba(34, 211, 238, 0.3);
+}
+
+.btn-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.btn-icon {
+  font-size: 1.25rem;
+  transition: transform var(--transition-fast);
+}
+
+.btn-primary:hover .btn-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes click {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.animate-click {
+  animation: click 0.3s ease;
+}

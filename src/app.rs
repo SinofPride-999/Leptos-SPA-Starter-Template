@@ -7,9 +7,6 @@ use crate::routes::HomeRoutes;
 pub fn App() -> impl IntoView {
     view! {
         <Router>
-            <nav>
-                <a href="/">"Home"</a>
-            </nav>
             <main>
                 <HomeRoutes/>
             </main>
