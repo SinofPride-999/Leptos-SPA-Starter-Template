@@ -22,8 +22,6 @@ app/                  # Root of your Leptos SPA project
 │   │   └── api.rs
 │   └── utils/
 │       └── mod.rs
-├── styles/                # CSS/SCSS files
-│   └── main.css
 ├── assets/                # Static files (images, icons)
 └── trunk.toml             # For building SPA via Trunk
 
@@ -55,8 +53,8 @@ Key Points About This Structure:
 7. src/utils/
     Misc helpers, formatting functions, type definitions, etc.
 
-8. styles/ and assets/
-    Keep styling and static assets separate from Rust code.
+8. assets/
+    Keep static assets separate from Rust code.
     SPA Leptos lets you bind classes easily to components.
 
 9. trunk.toml

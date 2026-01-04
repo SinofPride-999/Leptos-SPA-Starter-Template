@@ -6,5 +6,9 @@ release = false
 port = 8080
 open = true
 
+[watch]
+watch = ["src", "index.html"]
+ignore = ["target", "pkg", "dist"]
+
 [build.assets]
 folder = "."

@@ -30,7 +30,7 @@ This template serves as a **starting point** for developers who want to build:
 
 - 📦 **Modular Architecture**: Pre-structured folders for components, pages, routes, state, and services
 - 🛣️ **Routing Ready**: Client-side routing pre-configured with `leptos_router`
-- 🎨 **Tailwind CSS Pre-configured**: Easily style components using Tailwind classes
+- 🎨 **dTailwind CSS Pre-configure**: Easily style components using Tailwind classes
 - ⚡ **Blazing Fast**: Compiles to WebAssembly for near-native performance in the browser.
 - 🧩 **Reusable Components**: Pre-made example components (like Button) that demonstrate reactive patterns.
 - 🏗️ **Trunk-Ready**: Built with Trunk, so bundling, live reloading, and asset management are ready to go.
@@ -53,8 +53,6 @@ leptos-spa-template/
 ├── index.html             # HTML entry point
 ├── README.md              # This file
 ├── assets/                # Static assets (favicon, etc.)
-├── styles/
-│   └── main.css          # Global styles
 └── src/
     ├── main.rs           # Application entry point
     ├── app.rs            # Root App component with Router
@@ -249,15 +247,6 @@ Edit `index.html`:
 ```html
 <title>Your App Name</title>
 ```
-
-### Modifying Styles
-
-Edit `styles/main.css` to customize:
-
-- Colors (CSS variables at the top)
-- Animations
-- Component styles
-- Responsive breakpoints
 
 ## 🤝 Contributing
 
