@@ -1,0 +1,64 @@
+app/                  # Root of your Leptos SPA project
+├── Cargo.toml             # Rust package manifest
+├── Cargo.lock
+├── README.md
+├── index.html             # Main HTML entry for SPA
+├── pkg/                   # Will contain WASM build output (by wasm-pack / trunk)
+├── src/                   # Rust source files
+│   ├── main.rs            # Entry point for the SPA
+│   ├── app.rs             # Root App component
+│   ├── routes/            # SPA pages and routing
+│   │   ├── mod.rs
+│   │   ├── home_routes.rs
+│   ├── pages/            # SPA pages and routing
+│   │   ├── mod.rs
+│   │   ├── home_page.rs
+│   ├── components/        # Reusable UI components
+│   │   ├── mod.rs
+│   │   ├── button.rs
+│   ├── state/             # Global or shared state management
+│   │   └── mod.rs
+│   ├── services/          # API fetching logic
+│   │   └── api.rs
+│   └── utils/
+│       └── mod.rs
+├── styles/                # CSS/SCSS files
+│   └── main.css
+├── assets/                # Static files (images, icons)
+└── trunk.toml             # For building SPA via Trunk
+
+
+Key Points About This Structure:
+
+1. src/main.rs
+    Initializes Leptos SPA, sets up router, renders App into index.html.
+
+2. src/app.rs
+    Root component, contains the <Router> and <Outlet> for SPA navigation.
+
+3. src/routes/
+    Each page in your SPA has its own module.
+    mod.rs re-exports all pages for easy imports.
+
+4. src/components/
+    Reusable pieces like buttons, forms, navbars, cards, etc.
+    Keep them decoupled from routing logic.
+
+5. src/state/
+    Shared global state using Leptos RwSignal or Signal.
+    Example: auth status, theme, todos list.
+
+6. src/services/
+    All API calls live here.
+    Example: api.rs will use fetch to call your Salvo backend.
+
+7. src/utils/
+    Misc helpers, formatting functions, type definitions, etc.
+
+8. styles/ and assets/
+    Keep styling and static assets separate from Rust code.
+    SPA Leptos lets you bind classes easily to components.
+
+9. trunk.toml
+    Config for building the SPA via Trunk (most modern SPA tool for Leptos).
+    Handles bundling WASM, CSS, and assets.

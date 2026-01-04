@@ -1,0 +1,10 @@
+[build]
+target = "wasm32-unknown-unknown"
+release = false
+
+[serve]
+port = 8080
+open = true
+
+[build.assets]
+folder = "."
